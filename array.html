@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Tạo và thao tác với mảng</title>
+</head>
+<body>
+    <fieldset style="display: inline-block">
+        <legend>Simple Screen</legend>
+        <input type="text" id="inputArr">
+        <button onclick="addArr()">Add</button>
+        <button onclick="displayArr()">Display</button>
+        <p id="showArr"></p>
+    </fieldset>
+    <script>
+        let x = 0;
+        let arr = Array();
+
+        function addArr() {
+            arr.push(document.getElementById("inputArr").value);
+            document.getElementById("inputArr").value = "";
+            console.log(arr);
+        }
+
+
+        function displayArr() {
+            let showArr = ""
+            for (let i = 0; i < arr.length; i++) {
+                showArr = showArr + "Element " + i + " = " + arr[i] + "<br>";
+            }
+            document.getElementById("showArr").innerHTML = showArr;
+        }
+    </script>
+</body>
+</html>
