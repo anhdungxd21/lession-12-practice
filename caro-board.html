@@ -49,38 +49,30 @@
             cell.innerHTML = 'X';
             arrBoard[i][j] = "x";
             checkWin('x',i, j);
-            //console.log(arrBoard);
+            console.log(arrBoard);
             turn = 2;
         }else {
             cell.innerHTML = 'O';
             arrBoard[i][j] = "o";
-            //console.log(arrBoard);
+            console.log(arrBoard);
             turn = 1;
         }
     }
 ////////////////////////////////////////
-    function checkWin(checked, row, col) {
-        let count = 1;
-        for (let i = 1; i < 5; i++) {
-            if (arrBoard[row][col + i] === checked){
-                console.log(arrBoard[row][col + i])
-                count++;
-            } else {
-                count = 1;
-                break;
-            }
+    function checkWin(checked, createDegreesY, createDegreesX) {
+        let row = +document.getElementById("row").value;
+        let col = +document.getElementById("col").value;
+        let countRow = 0;
+        while (createDegreesX-1 >=0 && arrBoard[createDegreesY][createDegreesX] == checked){
+            countRow++;
+            createDegreesX--;
         }
-        for (let i = 1; i < 5; i++) {
-            if (arrBoard[row][col - i] === checked){
-                console.log(arrBoard[row][col - i])
-                count++;
-            } else {
-                count = 1;
-                break;
-            }
+        while (createDegreesX+1 >=col && arrBoard[createDegreesY][createDegreesX] == checked){
+            countRow++;
+            createDegreesX++;
         }
-        if(count >= 4){
-            alert(checked+ "Win");
+        if(countRow == 5){
+            alert(checked + " WIN")
         }
     }
 </script>
