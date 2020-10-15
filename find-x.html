@@ -5,14 +5,37 @@
     <title>[Thực hành] Tìm giá trị trong mảng</title>
 </head>
 <body>
+<input type="text" id="addArr">
+<button onclick="addValue()">Add value</button>
+<input type="text" id="item">
+<button onclick="findItem()">Find Item</button>
+<p id="showArr"></p>
 <script>
-    let value = prompt("Enter a number");
-    let number = [-3, 5, 1, 3, 2, 10];
-    for (let i = 0; i < number.length; i++) {
-        if ( number[i] == value){
-            alert("value " + number[i] + " found at " + i);
+    let value1 = document.getElementById("addArr");
+    let number = [];
+
+    function addValue() {
+        let str = ''
+        number.push(value1.value);
+        console.log(number);
+        document.getElementById("addArr").value = "";
+        for (let i = 0; i < number.length; i++) {
+            str = str + number[i] + ', ';
+            console.log(number[i]);
+        }
+        document.getElementById("showArr").innerHTML = str;
+        console.log(str);
+    }
+    function findItem() {
+        let item = document.getElementById("item").value;
+        for (let i = 0; i < number.length; i++) {
+            if ( item == number[i]){
+                alert("value " + number[i] + " found at " + i);
+                return ;
+            }
         }
     }
+
 
 </script>
 </body>

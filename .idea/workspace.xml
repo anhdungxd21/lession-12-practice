@@ -20,10 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cef869b2-0fa4-42b6-85b3-ecb793cd0b32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/practice-method-in-array.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/practice-method-in-array.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caro-board.html" beforeDir="false" afterPath="$PROJECT_DIR$/caro-board.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find-x.html" beforeDir="false" afterPath="$PROJECT_DIR$/find-x.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -102,7 +101,7 @@
       <updated>1602649020255</updated>
       <workItem from="1602649021329" duration="8535000" />
       <workItem from="1602726093473" duration="11019000" />
-      <workItem from="1602754554185" duration="1817000" />
+      <workItem from="1602754554185" duration="7373000" />
     </task>
     <servers />
   </component>

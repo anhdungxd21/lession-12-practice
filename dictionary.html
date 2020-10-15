@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Từ điển</title>
+</head>
+<body>
+<label for="English">English</label>
+<input type="text" id="English">
+<!--<label for="Vietnamese">Vietnamese</label>-->
+<!--<input type="text" id="Vietnamese">-->
+<button onclick="translateWord()">Translate</button>
+<br>
+<p id="result"></p>
+<script>
+    let arrEnglish = ["pig","cow","chicken","sheep"];
+    let arrVietnamese = ["heo","bò","ga","cừu"];
+
+    function translateWord() {
+        let word = document.getElementById("English").value;
+        console.log(word)
+        let result = arrVietnamese[arrEnglish.indexOf(word)];
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>
