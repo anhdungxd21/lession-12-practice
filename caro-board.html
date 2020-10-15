@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Tạo bàn cờ caro đơn giản</title>
+    <style>
+        td {
+            border: 1px solid black;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<label for="row">row</label>
+<input type="number" id="row" placeholder="Row" value="10">
+<label for="col">Column</label>
+<input type="number" id="col" placeholder="Column" value="10">
+<button onclick="setGameBoard()">Set Board</button>
+<table id="gameBoard">
+
+</table>
+<script>
+    let turn = 1;
+    let arrBoard = [];
+    let arrRow = [];
+    function setGameBoard() {
+        let row = +document.getElementById("row").value;
+        let col = +document.getElementById("col").value;
+        let str = ''
+        for (let i = 0; i < row; i++) {
+            str += '<tr>';
+            for (let j = 0; j < col; j++) {
+                str+='<td onclick="clickCell(this,'+i+','+j+')">' + '</td>';
+                arrRow[j] = null;
+            }
+            arrBoard[i] = arrRow;
+            arrRow =[];
+            str += '</tr>';
+        }
+        console.log(arrBoard);
+        document.getElementById("gameBoard").innerHTML = str;
+    }
+    function clickCell(cell,i,j) {
+        if (cell.innerHTML != '') return;
+        if (turn == 1){
+            cell.innerHTML = 'X';
+            arrBoard[i][j] = "x";
+            checkWin('x',i, j);
+            //console.log(arrBoard);
+            turn = 2;
+        }else {
+            cell.innerHTML = 'O';
+            arrBoard[i][j] = "o";
+            //console.log(arrBoard);
+            turn = 1;
+        }
+    }
+////////////////////////////////////////
+    function checkWin(checked, row, col) {
+        let count = 1;
+        for (let i = 1; i < 5; i++) {
+            if (arrBoard[row][col + i] === checked){
+                console.log(arrBoard[row][col + i])
+                count++;
+            } else {
+                count = 1;
+                break;
+            }
+        }
+        for (let i = 1; i < 5; i++) {
+            if (arrBoard[row][col - i] === checked){
+                console.log(arrBoard[row][col - i])
+                count++;
+            } else {
+                count = 1;
+                break;
+            }
+        }
+        if(count >= 4){
+            alert(checked+ "Win");
+        }
+    }
+</script>
+</body>
+</html>
